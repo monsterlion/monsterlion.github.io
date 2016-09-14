@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档 | MonsterSpace</title>
+    <title>Test | MonsterSpace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="welcome to my space">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MonsterSpace">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+    <meta name="description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Test">
+<meta property="og:url" content="http://yoursite.com/2016/09/12/haha/index.html">
 <meta property="og:site_name" content="MonsterSpace">
-<meta property="og:description" content="welcome to my space">
+<meta property="og:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
+<meta property="og:updated_time" content="2016-09-13T01:58:35.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MonsterSpace">
-<meta name="twitter:description" content="welcome to my space">
+<meta name="twitter:title" content="Test">
+<meta name="twitter:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
     
 
     
@@ -196,25 +197,21 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-haha" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/09/12/haha/">Test</a>
+        <h1 class="article-title" itemprop="name">
+            Test
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2016/09/12/haha/">
@@ -223,49 +220,140 @@
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/test/">test</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/test/">test</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Welcome to <a href="https://monsterlion.github.io/" target="_blank" rel="external">myspace</a>! 呵呵的对方答复</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>###code part:<br><code>helllo</code></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/09/12/haha/" data-id="cit2u7svc0000l8v45v6t42hn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/09/09/hello-world/">Hello World</a>
-        </h1>
+        <a href="http://yoursite.com/2016/09/12/haha/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/09/12/haha/">评论</a>
     
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/09/09/hello-world/">
-            <time datetime="2016-09-09T09:22:40.956Z" itemprop="datePublished">2016-09-09</time>
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/09/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Hello World</div>
         </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
-
-                    
-                    
-                </div>
-            </div>
-        </div>
     
-</div>
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -388,11 +476,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://yoursite.com/2016/09/12/haha/';
+        
+        this.page.identifier = 'haha';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'mosnterlion' + '.disqus.com/count.js';
+        s.src = '//' + 'mosnterlion' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
