@@ -53,8 +53,8 @@
   
   <entry>
     <title>aaa</title>
-    <link href="http://yoursite.com/2016/09/18/aaa/"/>
-    <id>http://yoursite.com/2016/09/18/aaa/</id>
+    <link href="http://yoursite.com/2016/09/18/aaab/"/>
+    <id>http://yoursite.com/2016/09/18/aaab/</id>
     <published>2016-09-18T02:54:05.000Z</published>
     <updated>2016-09-18T02:55:35.916Z</updated>
     
@@ -75,8 +75,8 @@
   
   <entry>
     <title>aaa</title>
-    <link href="http://yoursite.com/2016/09/18/aaab/"/>
-    <id>http://yoursite.com/2016/09/18/aaab/</id>
+    <link href="http://yoursite.com/2016/09/18/aaa/"/>
+    <id>http://yoursite.com/2016/09/18/aaa/</id>
     <published>2016-09-18T02:54:05.000Z</published>
     <updated>2016-09-18T02:55:35.916Z</updated>
     
