@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://monsterlion.github.io/"/>
-  <updated>2016-09-29T07:14:57.659Z</updated>
-  <id>https://monsterlion.github.io/</id>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-09-29T09:18:33.516Z</updated>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>monsterlion</name>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>你好，世界</title>
-    <link href="https://monsterlion.github.io/2016/09/29/hello-world2/"/>
-    <id>https://monsterlion.github.io/2016/09/29/hello-world2/</id>
+    <title>你好啊，世界</title>
+    <link href="http://yoursite.com/2016/09/29/hello-world2/"/>
+    <id>http://yoursite.com/2016/09/29/hello-world2/</id>
     <published>2016-09-29T07:11:48.481Z</published>
-    <updated>2016-09-29T07:14:57.659Z</updated>
+    <updated>2016-09-29T09:18:33.516Z</updated>
     
     <content type="html"><![CDATA[<h3 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h3><p><img src="https://github.com/monsterlion/markdown-pictures/raw/master/1.jpg" alt="test"></p>
 <a id="more"></a>
@@ -41,8 +41,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://monsterlion.github.io/2016/09/09/hello-world/"/>
-    <id>https://monsterlion.github.io/2016/09/09/hello-world/</id>
+    <link href="http://yoursite.com/2016/09/09/hello-world/"/>
+    <id>http://yoursite.com/2016/09/09/hello-world/</id>
     <published>2016-09-09T09:22:40.956Z</published>
     <updated>2016-09-29T07:08:38.186Z</updated>
     
