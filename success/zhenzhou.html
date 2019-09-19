@@ -68,6 +68,19 @@
         var myChart = echarts.init(document.getElementsByClassName('box')[0]);
 
         var dataAll = [data28,data29, data30, data1, data2, data3, data4, data5, data6, data7, data8, data9]
+		
+		 for (var i = 0; i < 12; i++) {
+			var d = dataAll[i];
+			for(var j=0 ; j<d.length; j++){			
+				var v = d[j].value;
+				var lng = v[0];
+				var lat = v[1];
+				var n = gcj02tobd09(lng, lat);
+				dataAll[i][j].value[0]=n[0];
+				dataAll[i][j].value[1]=n[1];
+			}
+			
+		 }
        
         option = {
             baseOption: {
@@ -148,8 +161,8 @@
 
                 },
                 bmap: {
-                    center: [113.6824, 34.7634],
-                    zoom: 13,
+                    center: [113.70054,34.78365],
+                    zoom: 20,
                     roam: true,
                     mapStyle: {
                         styleJson: [{
@@ -306,6 +319,16 @@
         $(window).on('resize', function() {
             myChart.resize();
         });
+		
+	
+	function gcj02tobd09(lng, lat) {
+		var x_PI = 3.14159265358979324 * 3000.0 / 180.0;
+		var z = Math.sqrt(lng * lng + lat * lat) + 0.00002 * Math.sin(lat * x_PI);
+		var theta = Math.atan2(lat, lng) + 0.000003 * Math.cos(lng * x_PI);
+		var bd_lng = z * Math.cos(theta) + 0.0065;
+		var bd_lat = z * Math.sin(theta) + 0.006;
+		return [bd_lng, bd_lat]
+	}	
     </script>
 </body>
 
