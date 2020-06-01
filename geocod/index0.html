@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地址解析服务</title>
+    <meta name="author" content="*"/>
+    <meta name="copyright" content="powered by *"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./basic.css" media="all"/>
+    <script src="./jquery.last.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=CG8eakl6UTlEb1OakeWYvofh"></script>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+    <script type="text/javascript">
+	    
+		var map,point,myGeo,markerClusterer;
+        window.onload = function () {
+			map = new BMap.Map("map_canvas");
+			map.enableDragging();
+			map.enableScrollWheelZoom();
+			point = new BMap.Point(104.067204, 30.679839);
+			map.centerAndZoom(point, 12);
+			myGeo = new BMap.Geocoder();
+			markerClusterer = new BMapLib.MarkerClusterer(map, {markers: []});
+		}
+
+		function geoSearch(addr) {
+				myGeo.getPoint(addr, function (point) {
+					if (point) {
+						var str = addr  + " : " + point.lng + "," + point.lat + "<br>";
+						
+						var po = new BMap.Point(point.lng, point.lat);
+						map.centerAndZoom(po, 18);
+
+						var _marker = new BMap.Marker(po);
+
+						_marker.addEventListener("click", function (e) {
+							this.openInfoWindow(new BMap.InfoWindow(addr));
+						});
+
+						_marker.addEventListener("mouseover", function (e) {
+							this.setTitle("位于: " + point.lng + "," + point.lat);
+						});
+
+						markerClusterer.addMarker(_marker);
+						map.addOverlay(_marker);              
+						//$("#showResults").append(str);
+						
+						//alert( "addr " + " : " + point.lng + "," + point.lat);
+						
+					} else {
+						var str = addr + '：解析失败 <br>';
+						//$('#showResults').append(str);
+					}
+				});
+		}
+		function csvToObject(csvString){
+			var csvarry = csvString.split("\r\n");
+			var datas = [];
+			for(var i=1;i<csvarry.length;i++){
+				var data = {};
+				var temp = csvarry[i].split(",");                
+				geoSearch(temp[1]);            
+				datas.push(data);
+			}
+			
+			alert("OK");
+			return datas;
+		}
+		function readCSVFile(obj) {
+			 var reader = new FileReader();
+			 reader.readAsText(obj.files[0]);
+			 reader.onload = function () {
+				   var data = csvToObject(this.result);
+					console.log(data);
+			}
+		}
+    </script>
+    <style type="text/css">
+        #main {
+            border: 1px solid #f0f0f0;
+            padding: 10px;
+        }
+        #main #left {
+            float: left;
+            width: 100%;
+            margin: 0 10px 0;
+        }
+        #main #right {
+            float: right;
+            margin: 0 10px 0 0;
+            width: 400px;
+        }
+        h3 a, h2 a {
+            color: #06f;
+        }
+        h3 a:hover, h2 a:hover {
+            color: #03f;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+        }
+        h3 {
+            font-size: 16px;
+            line-height: 30px;
+            height: 30px;
+            color: #333;
+            font-family: '微软雅黑';
+            border-bottom: 1px solid #f0f0f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+            margin: 8px 0;
+        }
+        h3 em {
+            font-weight: normal;
+            font-size: 12px;
+            color: #666;
+            font-style: normal;
+        }
+        h3 span {
+            font-weight: normal;
+            font-size: 12px;
+            color: #666;
+            float: right;
+        }
+        #info {
+            margin: 12px 6px 0 0;
+            float: right;
+            width: 180px;
+        }
+        #showResults {
+            border: 1px solid #e0e0e0;
+            height: 325px;
+            padding: 8px;
+            overflow-y: auto;
+            margin: 0 0 8px 0;
+        }
+        #map_canvas {
+            background: url(images/load_s.gif) no-repeat center center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header">
+</div>
+<div class="wrap">
+    <div id="toplink">
+    </div>
+    <div id="main">
+        <h1 class='title'>地址解析服务</h1>
+        <div id="content">
+            <div id="left">
+                <h3>地图展示</h3>
+                <div id="map_canvas" style='width: 100%; height: 600px; border: 1px solid #e0e0e0;'></div>
+            </div>
+            <!--<div id="left">
+                <h3>解析结果</h3>
+                <div id="showResults">
+                </div>
+            </div>-->
+            <div class="clear"></div>			
+			<input type="file" id="upfile" onchange="readCSVFile(this)" />
+			<!--<input type="button" onclick="readCSVFile(this);" value="read">-->
+        </div>
+    </div>
+</div>
+
+<!-- map.yanue.net Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a37fc5942ae6900185918d0920950509";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
